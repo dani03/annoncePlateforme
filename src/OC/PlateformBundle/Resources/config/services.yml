@@ -1,0 +1,10 @@
+services:
+#    oc_plateform.example:
+#        class: OC\PlateformBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+    oc_plateform.antispam:
+          class: OC\PlateformBundle\Antispam\OCAntispam
+          arguments:
+            - "@mailer"
+            - %locale%
+            - 50

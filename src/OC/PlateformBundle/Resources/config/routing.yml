@@ -1,0 +1,39 @@
+
+bye_bye:
+    path:    /bye_bye
+    defaults: {_controller:OCPlateformBundle:ByeBye:bye }
+
+oc_plateforme_home:
+    path:    /{page}
+    defaults: { _controller:OCPlateformBundle:Advert:index, page:    1 }
+    requirements:
+      page:    \d*
+
+oc_plateforme_view:
+    path:    /advert/{id}
+    defaults: {_controller:OCPlateformBundle:Advert:view }
+    requirements:
+      id:    \d+
+
+oc_plateforme_view_slug:
+    path:    /{year}/{slug}.{format}
+    defaults: {_controller:OCPlateformBundle:Advert:viewSlug, format:    html }
+    requirements:
+        year:    \d{4}
+        format:    html|xml
+
+oc_plateforme_add:
+    path:    /add
+    defaults: {_controller:OCPlateformBundle:Advert:add }
+
+oc_plateforme_edit:
+    path:    /edit/{id}
+    defaults: {_controller:OCPlateformBundle:Advert:edit }
+    requirements:
+      id:    \d+
+
+oc_plateforme_delete:
+    path:    /delete/{id}
+    defaults: {_controller:OCPlateformBundle:Advert:delete }
+    requirements:
+      id:    \d+
